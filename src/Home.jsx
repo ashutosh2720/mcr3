@@ -54,12 +54,13 @@ const Home = () => {
     }, [sortedColumn, sortedOrder]);
     return (
         <div className="flex justify-center items-center p-10 flex-col gap-10">
+            <h1 className="text-3xl font-bold mb-6">Snacks App</h1>
             <input
                 type="text"
                 placeholder="Search snacks..."
                 value={searchTerm}
                 onChange={handleSearch}
-                className="p-2 border border-gray-300 rounded mb-4"
+                className="p-2 border  border-black-300 rounded mb-4"
             />
             <table className="w-full border-collapse">
                 <thead className="p-10">
