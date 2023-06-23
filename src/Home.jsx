@@ -60,23 +60,24 @@ const Home = () => {
                 placeholder="Search snacks..."
                 value={searchTerm}
                 onChange={handleSearch}
-                className="p-2 border  border-black-300 rounded mb-4"
+                className="p-2  border-black-600 rounded mb-4 bg-cyan-600 text-white"
+
             />
             <table className="w-full border-collapse">
                 <thead className="p-10">
-                    <tr className="cursor-pointer py-2 px-4 bg-gray-200 text-left">
-                        <th className="cursor-pointer py-2 px-4 bg-gray-200 text-left" onClick={() => handleSort("id")} >ID</th>
-                        <th className="cursor-pointer py-2 px-4 bg-gray-200 text-left" onClick={() => handleSort("product_name")}>Product Name</th>
-                        <th className="cursor-pointer py-2 px-4 bg-gray-200 text-left" onClick={() => handleSort("product_weight")}>Product Weight</th>
-                        <th className="cursor-pointer py-2 px-4 bg-gray-200 text-left" onClick={() => handleSort("price")}>Price</th>
-                        <th className="cursor-pointer py-2 px-4 bg-gray-200 text-left" onClick={() => handleSort("calories")}>Calories</th>
-                        <th className="cursor-pointer py-2 px-4 bg-gray-200 text-left" onClick={() => handleSort("ingredients")}>Ingredients</th>
+                    <tr className="cursor-pointer py-2 px-4 bg-cyan-200 text-left border border-black">
+                        <th className="cursor-pointer py-2 px-4 bg-cyan-200 text-left" onClick={() => handleSort("id")} >ID</th>
+                        <th className="cursor-pointer py-2 px-4 bg-cyan-200 text-left" onClick={() => handleSort("product_name")}>Product Name</th>
+                        <th className="cursor-pointer py-2 px-4 bg-cyan-200 text-left" onClick={() => handleSort("product_weight")}>Product Weight</th>
+                        <th className="cursor-pointer py-2 px-4 bg-cyan-200 text-left" onClick={() => handleSort("price")}>Price</th>
+                        <th className="cursor-pointer py-2 px-4 bg-cyan-200 text-left" onClick={() => handleSort("calories")}>Calories</th>
+                        <th className="cursor-pointer py-2 px-4 bg-cyan-200 text-left" onClick={() => handleSort("ingredients")}>Ingredients</th>
                     </tr>
                 </thead>
                 <tbody className="">
                     {filteredSnacks.map((snack) => (
-                        <tr key={snack.id} className="border">
-                            <td className="border p-10">{snack.id}</td>
+                        <tr key={snack.id} className="border border-black">
+                            <td className="border-black p-10">{snack.id}</td>
                             <td>{snack.product_name}</td>
                             <td>{snack.product_weight}</td>
                             <td>{snack.price}</td>
