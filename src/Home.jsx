@@ -1,44 +1,5 @@
-import React, { useEffect, useState } from 'react'
-const snacksData = [
-    {
-        id: 1,
-        product_name: "Granola Bar",
-        product_weight: "21g",
-        price: 299,
-        calories: 150,
-        ingredients: ["Oats", "Honey", "Nuts", "Dried Fruits"]
-    },
-    {
-        id: 2,
-        product_name: "Fruit and Nut Mix",
-        product_weight: "73g",
-        price: 749,
-        calories: 353,
-        ingredients: [
-            "Almonds",
-            "Cashews",
-            "Dried Cranberries",
-            "Dried Blueberries"
-        ]
-    },
-    {
-        id: 3,
-        product_name: "Veggie Chips",
-        product_weight: "28g",
-        price: 279,
-        calories: 130,
-        ingredients: ["Sweet Potatoes", "Beets", "Kale", "Sea Salt"]
-    },
-    {
-        id: 4,
-        product_name: "Protein Balls",
-        product_weight: "100g",
-        price: 499,
-        calories: 318,
-        ingredients: ["Dates", "Almond Butter", "Protein Powder", "Chia Seeds"]
-    }
-];
-
+import React, { useEffect, useState } from "react";
+import { snacksData } from "./snaks";
 const Home = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [sortedColumn, setSortedColumn] = useState("");
@@ -64,7 +25,7 @@ const Home = () => {
 
     const handleSort = (column) => {
         if (column === sortedColumn) {
-            // Reverse the sorting order
+            // Reverse the sorting order 
             setSortedOrder(sortedOrder === "asc" ? "desc" : "asc");
         } else {
             // Set the sorting column and order
@@ -92,28 +53,29 @@ const Home = () => {
         }
     }, [sortedColumn, sortedOrder]);
     return (
-        <div className='flex justify-center items-center p-10 flex-col gap-10'>
+        <div className="flex justify-center items-center p-10 flex-col gap-10">
             <input
                 type="text"
                 placeholder="Search snacks..."
                 value={searchTerm}
                 onChange={handleSearch}
+                className="p-2 border border-gray-300 rounded mb-4"
             />
-            <table className='border m-10 p-10'>
-                <thead className=''>
-                    <tr>
-                        <th onClick={() => handleSort("id")}>ID</th>
-                        <th onClick={() => handleSort("product_name")}>Product Name</th>
-                        <th onClick={() => handleSort("product_weight")}>Product Weight</th>
-                        <th onClick={() => handleSort("price")}>Price</th>
-                        <th onClick={() => handleSort("calories")}>Calories</th>
-                        <th onClick={() => handleSort("ingredients")}>Ingredients</th>
+            <table className="w-full border-collapse">
+                <thead className="p-10">
+                    <tr className="cursor-pointer py-2 px-4 bg-gray-200 text-left">
+                        <th className="cursor-pointer py-2 px-4 bg-gray-200 text-left" onClick={() => handleSort("id")} >ID</th>
+                        <th className="cursor-pointer py-2 px-4 bg-gray-200 text-left" onClick={() => handleSort("product_name")}>Product Name</th>
+                        <th className="cursor-pointer py-2 px-4 bg-gray-200 text-left" onClick={() => handleSort("product_weight")}>Product Weight</th>
+                        <th className="cursor-pointer py-2 px-4 bg-gray-200 text-left" onClick={() => handleSort("price")}>Price</th>
+                        <th className="cursor-pointer py-2 px-4 bg-gray-200 text-left" onClick={() => handleSort("calories")}>Calories</th>
+                        <th className="cursor-pointer py-2 px-4 bg-gray-200 text-left" onClick={() => handleSort("ingredients")}>Ingredients</th>
                     </tr>
                 </thead>
-                <tbody className=''>
+                <tbody className="">
                     {filteredSnacks.map((snack) => (
-                        <tr key={snack.id} className='border'>
-                            <td className='border p-10'>{snack.id}</td>
+                        <tr key={snack.id} className="border">
+                            <td className="border p-10">{snack.id}</td>
                             <td>{snack.product_name}</td>
                             <td>{snack.product_weight}</td>
                             <td>{snack.price}</td>
@@ -124,7 +86,7 @@ const Home = () => {
                 </tbody>
             </table>
         </div>
-    )
-}
+    );
+};
 
-export default Home
+export default Home;
