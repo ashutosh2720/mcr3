@@ -68,7 +68,7 @@ const Home = () => {
                     <tr className="cursor-pointer py-2 px-4 bg-cyan-200 text-left border border-black">
                         <th className="cursor-pointer py-2 px-4 bg-cyan-200 text-left" onClick={() => handleSort("id")} >ID</th>
                         <th className="cursor-pointer py-2 px-4 bg-cyan-200 text-left" onClick={() => handleSort("product_name")}>Product Name</th>
-                        <th className="cursor-pointer py-2 px-4 bg-cyan-200 text-left" onClick={() => handleSort("product_weight")}>Product Weight</th>
+                        <th className="cursor-pointer py-2 px-4 bg-cyan-200 text-left" onClick={() => handleSort("product_weight")}>Product Weight (g)</th>
                         <th className="cursor-pointer py-2 px-4 bg-cyan-200 text-left" onClick={() => handleSort("price")}>Price</th>
                         <th className="cursor-pointer py-2 px-4 bg-cyan-200 text-left" onClick={() => handleSort("calories")}>Calories</th>
                         <th className="cursor-pointer py-2 px-4 bg-cyan-200 text-left" onClick={() => handleSort("ingredients")}>Ingredients</th>
